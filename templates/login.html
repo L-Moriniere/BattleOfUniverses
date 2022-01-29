@@ -4,12 +4,12 @@
     <h1>Login</h1>
     <form action="" method="post">
         {% csrf_token %}
+
         {% if form.errors %}
             {% for error in form.errors %}
                 <h2>Erreur générique ! {{ error }}</h2>
             {% endfor %}
         {% endif %}
-
 
         {% for field in form %}
             {% if field.errors %}

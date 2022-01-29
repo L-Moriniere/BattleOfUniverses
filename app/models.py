@@ -55,16 +55,6 @@ class BattleUniverseCharacter(models.Model):
         return f"{self.battle_universe.id} - {self.character.name}" or "? (no title)"
 
 
-class User(models.Model):
-    name = models.CharField(max_length=200, null=True)
-    first_name = models.CharField(max_length=200, null=True)
-    mail = models.EmailField()
-    password = models.CharField(max_length=50)
-
-    def __str__(self):
-        return f"{self.mail}" or "? (no title)"
-
-
 class Fight(models.Model):
     fighter1 = models.ForeignKey(Character, related_name='fighter1', on_delete=models.CASCADE)
     fighter2 = models.ForeignKey(Character, related_name='fighter2', on_delete=models.CASCADE)
@@ -73,5 +63,3 @@ class Fight(models.Model):
 
     def __str__(self):
         return f"{self.fighter1} vs {self.fighter2} -> {self.winner}" or "? (no title)"
-
-

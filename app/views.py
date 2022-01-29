@@ -2,9 +2,11 @@ import random
 from datetime import date
 
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.template.context_processors import request
 from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, FormView
 
@@ -142,9 +144,9 @@ class LoginFormView(FormView):
     success_url = "/"
 
     def form_valid(self, form):
-        email = form.cleaned_data['email']
+        username = form.cleaned_data['username']
         password = form.cleaned_data['password']
-        user = authenticate(username=email, password=password)
+        user = authenticate(username=username, password=password)
         if user is not None:
             # A backend authenticated the credentials
             login(self.request, user)
@@ -158,3 +160,30 @@ class LoginFormView(FormView):
 
     def form_invalid(self, form):
         pass
+
+
+class LogoutView(TemplateView):
+    template_name = "index.html"
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return render(request, self.template_name)
+
+
+class UserCreateView(CreateView):
+    template_name = "user_create.html"
+    model = User
+    success_url = reverse_lazy("index")
+    fields = ['first_name', 'last_name', 'username', 'email', 'password']
+
+    def form_valid(self, form):
+        first_name = form.cleaned_data['first_name']
+        last_name = form.cleaned_data['last_name']
+        username = form.cleaned_data['username']
+        email = form.cleaned_data['email']
+        password = form.cleaned_data['password']
+        user = User.objects.create_user(first_name=first_name, last_name=last_name,
+                                        username=username, email=email, password=password)
+        user.save()
+        authenticate(email=email, password=password)
+        return super().form_valid(form)

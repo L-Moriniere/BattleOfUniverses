@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="{% static "css/main.css" %}">
     <link rel="stylesheet" href="{% static "css/perso.css" %}">
     <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.css" %}">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
 
     <meta name="theme-color" content="#fafafa">
 
@@ -34,7 +33,6 @@
     <script src="{% static "js/plugins.js" %}"></script>
     <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
     <script src="{% static "js/main.js" %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     {% block head_js_more %}
     {% endblock %}
@@ -50,7 +48,16 @@
         <li><a href="{% url "universe_list" %}">{% trans "Universes" %}</a></li>
         <li><a href="{% url "character_list" %}">{% trans "Fighters" %}</a></li>
         <li><a href="{% url "battle_universe_list" %}">{% trans "Battle Of Universes History" %} </a></li>
-        <li><a href="{% url "login" %}">{% trans "Login" %} </a></li>
+        {% if user.is_authenticated %}
+            <li><a href="">{{  request.user.username }} </a></li>
+            <li><a href="{% url "logout" %}">{% trans "Logout" %} </a></li>
+
+        {% else %}
+
+            <li><a href="{% url "login" %}">{% trans "Login" %} </a></li>
+            <li><a href="{% url "register" %}">{% trans "Register" %} </a></li>
+        {% endif %}
+
     </ul>
 </nav>
 
