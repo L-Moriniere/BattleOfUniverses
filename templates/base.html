@@ -1,0 +1,64 @@
+{% load i18n %}
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <link rel="manifest" href="{% static "site.webmanifest" %}">
+    <link rel="apple-touch-icon" href="{% static "icon.png" %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" href="{% static "css/perso.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+    <meta name="theme-color" content="#fafafa">
+
+    <script src="{% static "js/vendor/modernizr-3.11.2.min.js" %}"></script>
+    <script src="{% static "js/plugins.js" %}"></script>
+    <script src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <script src="{% static "js/main.js" %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    {% block head_js_more %}
+    {% endblock %}
+</head>
+
+<body>
+
+<nav class="navBar">
+    <img src="/static/img/logo.svg" width="300px" alt="logo" class="logo">
+
+    <ul>
+        <li><a href="{% url "index" %}">{% trans "Home" %}</a></li>
+        <li><a href="{% url "universe_list" %}">{% trans "Universes" %}</a></li>
+        <li><a href="{% url "character_list" %}">{% trans "Fighters" %}</a></li>
+        <li><a href="{% url "battle_universe_list" %}">{% trans "Battle Of Universes History" %} </a></li>
+        <li><a href="{% url "login" %}">{% trans "Login" %} </a></li>
+    </ul>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+
+</body>
+
+</html>

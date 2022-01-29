@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container-fluid p-4">
+        <h1>Personnages</h1>
+
+        <button class="btn btn-outline-primary"><a href="{% url "character_new" %}">Ajouter un personnage</a></button>
+        <br>
+        <br>
+
+        <div class="d-flex align-content-between justify-content-center flex-wrap m-3">
+            {% for character in object_list %}
+
+                <div class="card mx-2 mt-2" style="width: 20rem;">
+                    <a href="{% url "character_detail" character.id %}"><img src="{{ character.image.url }}"
+                                                                           class="card-img-top"
+                                                                           alt="image_universe" height="150rem"></a>
+                    <div class="card-body border">
+                        <a href="{% url "character_detail" character.id %}"><h4>{{ character.name }}</h4></a>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+
+
+
+    </div>
+{% endblock %}

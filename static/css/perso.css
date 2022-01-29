@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background: #0067C6;
+    padding: 10px 0;
+    box-shadow: 0 4px 0 #002ea7;
+}
+
+nav ul {
+    font-family: 'Bangers', cursive;
+    font-size: 20pt;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.center-text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 22em;
+}
+
+.title {
+    font-family: 'Bangers', cursive;
+    font-size: 35pt;
+}
+
+.paragraph {
+    font-size: 12pt;
+    padding: 20px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .5s;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+nav.stroke ul li a {
+    position: relative;
+}
+
+nav.stroke ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #333;
+    height: 1px;
+}
+
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body .foot-wrapper, html .foot-wrapper {
+    color: #BFBFBF;
+    float: left;
+    position: absolute;
+}
+
+body .foot-wrapper .footer, html .foot-wrapper .footer {
+    margin-top: 100vh;
+    margin-left: 20px;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 30pt;
+    font-family: inherit;
+}
+
+button.start {
+    font-weight: 600;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #7a28df;
+    border: 2px solid #280157;
+    border-radius: 0.75em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.start::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #561a9f;;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px #460a8e, 0 0.625em 0 0 #ecc1ff;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.start:hover {
+    background: #7d34d5;
+    transform: translate(0, 0.25em);
+}
+
+button.start:hover::before {
+    box-shadow: 0 0 0 2px #9225ff, 0 0.5em 0 0 #f2d5ff;
+    transform: translate3d(0, 0.5em, -1em);
+}
+
+button.start:active {
+    background: #7631bb;
+    transform: translate(0em, 0.75em);
+}
+
+button.start:active::before {
+    box-shadow: 0 0 0 2px #8136db, 0 0 #7b00a8;
+    transform: translate3d(0, 0, -1em);
+}
+
+.add {
+    font-size: 14pt;
+    background-color: #ff5656;
+    padding: 20px;
+    border-radius: 10px 10px;
+    border: #a70f00 1px solid;
+}
+
+.crop {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid black;
+}

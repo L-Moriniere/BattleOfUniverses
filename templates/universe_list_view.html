@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container-fluid p-4 ">
+        <h1> Univers </h1>
+        <button class="btn btn-outline-primary"><a href="{% url "universe_new" %}" class="fs-4">Ajouter un univers</a>
+        </button>
+        <br>
+        <br>
+        <div class="d-flex align-content-between justify-content-center flex-wrap m-3">
+            {% for universe in object_list %}
+
+                <div class="card mx-2" style="width: 20rem;">
+                    <a href="{% url "universe_detail" universe.id %}"><img src="{{ universe.image.url }}"
+                                                                           class="card-img-top"
+                                                                           alt="image_universe" height="100rem"></a>
+                    <div class="card-body border">
+                        <a href="{% url "universe_detail" universe.id %}"><h4>{{ universe.name }}</h4></a>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="container-fluid p-3">
+        <h1 class="title">{% trans "Start a Battle of Universes !" %}</h1>
+        <form action="{% url 'battle_universe_new' %}">
+            <button class="start" type="submit">{% trans "Start" %}</button>
+        </form>
+    </div>
+{% endblock %}
+
+{# Translate : makemessages --ignore venv --locale fr --locale en #}
+{# Translate :compilemessages --ignore venv #}
+{# Translate : trimmed -> une seule ligne #}

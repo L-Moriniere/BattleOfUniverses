@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div class="container-fluid p-4 ">
+        <h1> Battle of Universe : {{ battleuniverse.name }} </h1>
+        {% if battleuniverse.winner %}
+            <h3><u>Winner of this battle !</u></h3>
+            <br>
+            <div class="d-flex justify-content-center">
+                <div class="card border-5 border-warning" style="width: 20rem;">
+                    <a href="{% url "character_detail" battleuniverse.winner.id %}">
+                        <img src="{{ battleuniverse.winner.image.url }}" class="card-img-top" alt="winner_image">
+                    </a>
+                    <div class="card-body border">
+                        <a href="{% url "character_detail" battleuniverse.winner.id %}">
+                            <h4>{{ battleuniverse.winner.name }}</h4></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h4>Fights</h4>
+            <div class="container-fluid">
+                {% for f in fights %}
+                    <br>
+                    <div class="row justify-content-center">
+                        <div class="col-5">
+                            {% if f.winner == f.fighter1 %}
+                                <div class="card border-5 border-warning float-end position-relative"
+                                     style="width: 15em;">
+                                    <a href="{% url "character_detail" f.fighter1.id %}">
+                                        <img src="{{ f.fighter1.image.url }}" class="card-img-top"
+                                             alt="winner_image">
+                                    </a>
+                                    <div class="card-body border">
+                                        <a href="{% url "character_detail" f.fighter1.id %}">
+                                            <h4>{{ f.fighter1.name }}</h4></a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="card border-5 border-danger float-end position-relative"
+                                     style="width: 15em;">
+                                    <a href="{% url "character_detail" f.fighter1.id %}">
+                                        <img src="{{ f.fighter1.image.url }}" class="card-img-top"
+                                             alt="winner_image">
+                                    </a>
+                                    <div class="card-body border">
+                                        <a href="{% url "character_detail" f.fighter1.id %}">
+                                            <h4>{{ f.fighter1.name }}</h4></a>
+                                    </div>
+                                </div>
+
+                            {% endif %}
+                        </div>
+                        <div class="col-2"><h2>VS</h2></div>
+                        <div class="col-5">
+
+                            {% if f.winner == f.fighter2 %}
+                                <div class="card border-5 border-warning float-start position-relative"
+                                     style="width: 15em; ">
+                                    <a href="{% url "character_detail" f.fighter2.id %}">
+                                        <img src="{{ f.fighter2.image.url }}" class="card-img-top"
+                                             alt="winner_image">
+                                    </a>
+                                    <div class="card-body border">
+                                        <a href="{% url "character_detail" f.fighter2.id %}">
+                                            <h4>{{ f.fighter2.name }}</h4></a>
+                                    </div>
+                                </div>
+
+                            {% else %}
+                                <div class="card border-5 border-danger float-start position-relative"
+                                     style="width: 15em; ">
+                                    <a href="{% url "character_detail" f.fighter2.id %}">
+                                        <img src="{{ f.fighter2.image.url }}" class="card-img-top"
+                                             alt="winner_image">
+                                    </a>
+                                    <div class="card-body border">
+                                        <a href="{% url "character_detail" f.fighter2.id %}">
+                                            <h4>{{ f.fighter2.name }}</h4></a>
+                                    </div>
+                                </div>
+
+                            {% endif %}
+
+                        </div>
+                        <br>
+
+
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+
+
+{% endblock %}

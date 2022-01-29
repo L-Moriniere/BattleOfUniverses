@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="container-fluid p-2">
+
+        <h1 class="center-text">{{ character.name }}</h1>
+        <img src="{{ character.image.url }}" class="img-thumbnail " alt="character" width="300px">
+        <br>
+
+        <h2> {% trans "Description" %} </h2>
+        <p class="center-text">{{ character.description }}</p>
+        <p class="center-text">{{ character.universe.name }}</p>
+        <p class="center-text"><strong>Strength</strong> : {{ character.strength }}</p>
+        <p class="center-text"><strong>Perception </strong>: {{ character.perception }}</p>
+        <p class="center-text"><strong>Agility </strong>: {{ character.agility }}</p>
+        <p class="center-text"><strong>Intelligence </strong>: {{ character.intelligence }}</p>
+        <p class="center-text"><strong>Endurance </strong>: {{ character.endurance }}</p>
+
+        {% for u in universe %}
+            <img src="{{ u.image.url }}" class="img-thumbnail" width="300px" alt="image_character">
+        {% endfor %}
+        <br>
+        <br>
+        <button class="btn btn-outline-danger"><a href="{% url "character_list" %}">Liste des personnages</a></button>
+        <br>
+
+    </div>
+{% endblock %}
