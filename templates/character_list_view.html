@@ -5,15 +5,15 @@
         <h1>Personnages</h1>
 
         {% if user.is_authenticated %}
-
             <button class="btn btn-outline-primary"><a href="{% url "character_new" %}">Ajouter un personnage</a>
             </button>
             <br>
         {% endif %}
-        <div class="d-flex align-content-between justify-content-center flex-wrap m-3">
-            {% for character in object_list %}
 
-                <div class="card mx-2 mt-2" style="width: 20rem;">
+        <div class="d-flex align-content-between justify-content-center flex-wrap m-3">
+            {% for character in object_list|dictsort:"name" %}
+
+                <div class="card mx-2 mb-2" style="width: 20rem;">
                     <a href="{% url "character_detail" character.id %}"><img src="{{ character.image.url }}"
                                                                              class="card-img-top"
                                                                              alt="image_universe" height="150rem"></a>

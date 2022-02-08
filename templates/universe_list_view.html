@@ -13,9 +13,9 @@
 
         {% endif %}
         <div class="d-flex align-content-between justify-content-center flex-wrap m-3">
-            {% for universe in object_list %}
+            {% for universe in object_list|dictsort:"name" %}
 
-                <div class="card mx-2" style="width: 20rem;">
+                <div class="card mx-2 mb-3" style="width: 20rem;">
                     <a href="{% url "universe_detail" universe.id %}"><img src="{{ universe.image.url }}"
                                                                            class="card-img-top"
                                                                            alt="image_universe" height="150rem"></a>

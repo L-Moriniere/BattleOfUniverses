@@ -5,6 +5,12 @@
 
     <div class="container-fluid p-2">
 
+        {% if user.is_authenticated %}
+            <button class="btn btn-outline-primary"><a href="{% url "character_edit" character.id%}">Modifier {{ character.name }}</a>
+            </button>
+            <br>
+        {% endif %}
+
         <h1 class="center-text">{{ character.name }}</h1>
         <img src="{{ character.image.url }}" class="img-thumbnail " alt="character" width="300px">
         <br>

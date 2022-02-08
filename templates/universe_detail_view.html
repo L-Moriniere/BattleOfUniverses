@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container-fluid p-2">
+
+
+        {% if user.is_authenticated %}
+            <button class="btn btn-outline-primary"><a
+                    href="{% url "universe_edit" universe.id %}">Modifier {{ universe.name }}</a>
+            </button>
+            <br>
+        {% endif %}
+
         <h1>{{ universe.name }}</h1>
         <img src="{{ object.image.url }}" class="img-thumbnail" alt="character" width="400px">
         <br>
@@ -9,9 +18,9 @@
         <p class="center-text">{{ universe.description }}</p>
         <p class="center-text">{{ universe.universe.name }}</p>
         <h2>Liste des personnages de cet univers</h2>
-        <div class="d-flex justify-content-center ">
+        <div class="d-flex align-content-between justify-content-center flex-wrap m-3 ">
             {% for character in characters %}
-                <div class="card mx-2 " style="width: 15rem; height: 15rem">
+                <div class="card mx-2 mb-3" style="width: 15rem; height: 15rem">
                     <a href="{% url "character_detail" character.pk %}">
                         <img src="{{ character.image.url }}" class="card-img-top" alt="image_character" height="150rem"></a>
                     <div class="card-body border">
@@ -21,9 +30,10 @@
                 <br>
             {% endfor %}
         </div>
-    <br>
-    <br>
-        <button class="btn btn-outline-danger"><a href="{% url "universe_list" %}" class="fs-4">Retourner aux univers</a></button>
+        <br>
+        <br>
+        <button class="btn btn-outline-danger"><a href="{% url "universe_list" %}" class="fs-4">Retourner aux
+            univers</a></button>
     </div>
 
     <br>

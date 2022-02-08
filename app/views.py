@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template.context_processors import request
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, FormView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, FormView, UpdateView
 
 from app.forms.form import LoginForm, UploadImgUniverseForm, BattleUniverse, CharacterForm, BattleUniverseForm
 from app.methods import toFight
@@ -47,17 +47,31 @@ class CharacterCreateView(CreateView):
         description = form.cleaned_data['description']
         strength = form.cleaned_data['strength']
         perception = form.cleaned_data['perception']
-        luck = form.cleaned_data['agility']
+        agility = form.cleaned_data['agility']
         intelligence = form.cleaned_data['intelligence']
         endurance = form.cleaned_data['endurance']
         image = form.cleaned_data['image']
         universe = form.cleaned_data['universe']
         character = Character.objects.create(name=name, description=description, strength=strength,
-                                             perception=perception, luck=luck, endurance=endurance,
+                                             perception=perception, agility=agility, endurance=endurance,
                                              intelligence=intelligence, image=image)
         characterUniverse = CharacterUniverse.objects.create(character=character, universe=universe)
         character.save()
         characterUniverse.save()
+        return HttpResponseRedirect('/characters')
+
+    def is_valid(self):
+        pass
+
+
+class CharacterUpdateView(UpdateView):
+    template_name = "character_update.html"
+    model = Character
+    success_url = reverse_lazy('character_list')
+    form_class = CharacterForm
+
+    def form_valid(self, form):
+        form.save()
         return HttpResponseRedirect('/characters')
 
     def is_valid(self):
@@ -71,6 +85,23 @@ class UniverseListView(ListView):
 
 class UniverseCreateView(CreateView):
     template_name = "universe_create.html"
+    model = Universe
+    fields = '__all__'
+    success_url = reverse_lazy('universe_list')
+
+    def upload(request):
+        if request.method == "POST":
+            form = UploadImgUniverseForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+            return HttpResponseRedirect('/universes/')
+        else:
+            form = UploadImgUniverseForm()
+        return render(request, 'universe_list_view.html', {'form': form})
+
+
+class UniverseUpdateView(UpdateView):
+    template_name = "universe_update.html"
     model = Universe
     fields = '__all__'
     success_url = reverse_lazy('universe_list')
