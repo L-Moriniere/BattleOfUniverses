@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-29 15:06+0000\n"
+"POT-Creation-Date: 2022-02-09 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,45 +18,118 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: BattleOfUniverses/settings.py:140
+#: BattleOfUniverses/settings.py:139
 msgid "English"
-msgstr ""
+msgstr "Anglais"
 
-#: BattleOfUniverses/settings.py:141
+#: BattleOfUniverses/settings.py:140
 msgid "French"
+msgstr "Français"
+
+#: templates/base.html:47
+msgid "Accueil"
+msgstr "Home"
+
+#: templates/base.html:48 templates/universe_list_view.html:6
+msgid "Univers"
 msgstr ""
 
 #: templates/base.html:49
-msgid "Home"
+msgid "Combattants"
 msgstr ""
 
 #: templates/base.html:50
-msgid "Universes"
-msgstr ""
-
-#: templates/base.html:51
-msgid "Fighters"
-msgstr ""
-
-#: templates/base.html:52
-msgid "Battle Of Universes History"
+msgid "Historique des Batailles des Univers"
 msgstr ""
 
 #: templates/base.html:53
-msgid "Login"
+msgid "Deconnexion"
 msgstr ""
 
-#: templates/character_detail_view.html:12
+#: templates/base.html:57
+msgid "Connexion"
+msgstr ""
+
+#: templates/base.html:58
+msgid "S'inscrire"
+msgstr ""
+
+#: templates/battle_universe_create.html:18
+msgid "Tout séléctionner"
+msgstr ""
+
+#: templates/battle_universe_create.html:25 templates/character_create.html:15
+#: templates/character_update.html:15 templates/login.html:26
+#: templates/universe_create.html:15 templates/universe_update.html:15
+#: templates/user_create.html:15
+msgid "Envoyer"
+msgstr ""
+
+#: templates/battle_universe_detail_view.html:7
+msgid "Bataille des Univers :"
+msgstr ""
+
+#: templates/battle_universe_detail_view.html:9
+msgid "Gagnant de cette bataille !"
+msgstr ""
+
+#: templates/battle_universe_list_view.html:5
+msgid "Bataille des Univers"
+msgstr ""
+
+#: templates/character_delete.html:7
+msgid "Voulez vous vraiment supprimer "
+msgstr ""
+
+#: templates/character_detail_view.html:9
+msgid "Liste des personnages"
+msgstr ""
+
+#: templates/character_detail_view.html:15
+#: templates/universe_detail_view.html:9
+msgid "Modifier"
+msgstr ""
+
+#: templates/character_detail_view.html:24
+msgid "Nombre de victoire"
+msgstr ""
+
+#: templates/character_detail_view.html:26
 msgid "Description"
 msgstr ""
 
-#: templates/index.html:7
-msgid "Start a Battle of Universes !"
+#: templates/character_detail_view.html:44
+msgid "Supprimer "
 msgstr ""
 
-#: templates/index.html:9
-msgid "Start"
+#: templates/character_list_view.html:6
+msgid "Personnages"
 msgstr ""
 
-#~ msgid "Accueil"
-#~ msgstr "Home"
+#: templates/character_list_view.html:9
+msgid "Ajouter un personnage"
+msgstr ""
+
+#: templates/index.html:26
+msgid "Commencer une Bataille des Univers !"
+msgstr ""
+
+#: templates/index.html:28
+msgid "Commencer"
+msgstr ""
+
+#: templates/login.html:11
+msgid "Erreur générique !"
+msgstr ""
+
+#: templates/universe_detail_view.html:21
+msgid "Liste des personnages de cet univers"
+msgstr ""
+
+#: templates/universe_detail_view.html:36
+msgid "Retourner aux univers"
+msgstr ""
+
+#: templates/universe_list_view.html:10
+msgid "Ajouter un univers"
+msgstr ""

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
     <h1>Login</h1>
@@ -7,7 +8,7 @@
 
         {% if form.errors %}
             {% for error in form.errors %}
-                <h2>Erreur générique ! {{ error }}</h2>
+                <h2>{% trans "Erreur générique !"%} {{ error }}</h2>
             {% endfor %}
         {% endif %}
 
@@ -22,6 +23,6 @@
                 {{ field }}
             </p>
         {% endfor %}
-        <button type="submit">Envoyer</button>
+        <button type="submit">{% trans "Envoyer"%}</button>
     </form>
 {% endblock %}

@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
     <div class="container-fluid p-4">
-        <h1>Personnages</h1>
+        <h1>{% trans "Personnages" %}</h1>
 
         {% if user.is_authenticated %}
-            <button class="btn btn-outline-primary"><a href="{% url "character_new" %}">Ajouter un personnage</a>
+            <button class="btn btn-outline-primary"><a href="{% url "character_new" %}">{% trans "Ajouter un personnage" %}</a>
             </button>
             <br>
         {% endif %}

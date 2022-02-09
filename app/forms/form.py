@@ -26,7 +26,7 @@ class CharacterForm(ModelForm):
     universe = forms.ModelChoiceField(queryset=Universe.objects.all())
 
 
-class CharacterImageForm(forms.ModelChoiceField):
+class CharacterImageForm(forms.ModelMultipleChoiceField):
     def label_from_instance(self, obj):
         return mark_safe("<img src='%s' alt='image_character'/><br><h3>%s</h3>" % (obj.image.url, obj.name))
 

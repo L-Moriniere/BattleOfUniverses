@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
     {% if messages %}
         <br>
         <div class="row">
@@ -24,9 +23,9 @@
     {% endif %}
 
     <div class="container-fluid p-3">
-        <h1 class="title">{% trans "Start a Battle of Universes !" %}</h1>
+        <h1 class="title">{% trans "Commencer une Bataille des Univers !" %}</h1>
         <form action="{% url 'battle_universe_new' %}">
-            <button class="start" type="submit">{% trans "Start" %}</button>
+            <button class="start" type="submit">{% trans "Commencer" %}</button>
         </form>
     </div>
 {% endblock %}

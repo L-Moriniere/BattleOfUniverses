@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
     <div class="container-fluid p-4 ">
-        <h1> Univers </h1>
+        <h1> {% trans "Univers" %}  </h1>
 
         {% if user.is_authenticated %}
 
-            <button class="btn btn-outline-primary"><a href="{% url "universe_new" %}">Ajouter un univers</a>
+            <button class="btn btn-outline-primary"><a href="{% url "universe_new" %}">{% trans "Ajouter un univers"%}</a>
             </button>
             <br>
             <br>

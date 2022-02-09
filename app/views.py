@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template.context_processors import request
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, FormView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, FormView, UpdateView, DeleteView
 
 from app.forms.form import LoginForm, UploadImgUniverseForm, BattleUniverse, CharacterForm, BattleUniverseForm
 from app.methods import toFight
@@ -22,6 +22,12 @@ class IndexView(TemplateView):
 class CharacterListView(ListView):
     template_name = "character_list_view.html"
     model = Character
+
+
+class CharacterDeleteView(DeleteView):
+    model = Character
+    success_url = reverse_lazy('character_list')
+    template_name = "character_delete.html"
 
 
 class CharacterDetailView(DetailView):

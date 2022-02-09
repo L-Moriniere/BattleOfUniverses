@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
 
     <div class="container-fluid p-4 ">
-        <h1> Battle of Universe : {{ battleuniverse.name }} </h1>
+        <h1> {% trans "Bataille des Univers :" %} {{ battleuniverse.name }} </h1>
         {% if battleuniverse.winner %}
-            <h3><u>Winner of this battle !</u></h3>
+            <h3><u>{% trans "Gagnant de cette bataille !" %}</u></h3>
             <br>
             <div class="d-flex justify-content-center">
                 <div class="card border-5 border-warning" style="width: 20rem;">
@@ -86,7 +87,6 @@
 
                         </div>
                         <br>
-
 
                     </div>
                 {% endfor %}

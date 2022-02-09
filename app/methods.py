@@ -5,7 +5,7 @@ from app.models import Fight
 
 def handle_uploaded_file_character(f):
     with open('Character/', 'wb+') as destination:
-        for chunk in f.chunks():
+        for chun0k in f.chunks():
             destination.write(chunk)
 
 
@@ -32,6 +32,8 @@ def toFight(characters, battleUniverse):
             characters.remove(characters[1])
             if len(characters) == 2:
                 battleUniverse.winner = characters[0]
+                characters[0].nbVictory = characters[0].nbVictory+1
+                characters[0].save()
                 battleUniverse.save()
         else:
             fight = Fight.objects.create(fighter1=characters[0], fighter2=characters[1],
@@ -40,4 +42,6 @@ def toFight(characters, battleUniverse):
             characters.remove(characters[0])
             if len(characters) == 2:
                 battleUniverse.winner = characters[1]
+                characters[1].nbVictory = characters[1].nbVictory+1
+                characters[1].save()
                 battleUniverse.save()

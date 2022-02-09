@@ -21,7 +21,7 @@ from django.urls import path
 
 from app.views import IndexView, CharacterListView, CharacterCreateView, UniverseListView, UniverseCreateView, \
     CharacterDetailView, LoginFormView, BattleUniverseListView, BattleUniverseCreateView, BattleUniverseDetailView, \
-    UniverseDetailView, UserCreateView, LogoutView, CharacterUpdateView, UniverseUpdateView
+    UniverseDetailView, UserCreateView, LogoutView, CharacterUpdateView, UniverseUpdateView, CharacterDeleteView
 
 urlpatterns = [
 ]
@@ -36,6 +36,7 @@ urlpatterns += i18n_patterns(
     path('characters', CharacterListView.as_view(), name="character_list"),
     path('character/new', CharacterCreateView.as_view(), name="character_new"),
     path('character/<int:pk>', CharacterDetailView.as_view(), name="character_detail"),
+    path('character/<int:pk>/delete', CharacterDeleteView.as_view(), name="character_delete"),
     path('character/edit/<int:pk>', CharacterUpdateView.as_view(), name="character_edit"),
     path('universes', UniverseListView.as_view(), name="universe_list"),
     path('universe/new', UniverseCreateView.as_view(), name="universe_new"),

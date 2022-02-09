@@ -44,18 +44,18 @@
     <img src="/static/img/logo.svg" width="300px" alt="logo" class="logo">
 
     <ul>
-        <li><a href="{% url "index" %}">{% trans "Home" %}</a></li>
-        <li><a href="{% url "universe_list" %}">{% trans "Universes" %}</a></li>
-        <li><a href="{% url "character_list" %}">{% trans "Fighters" %}</a></li>
-        <li><a href="{% url "battle_universe_list" %}">{% trans "Battle Of Universes History" %} </a></li>
+        <li><a href="{% url "index" %}">{% trans "Accueil" %}</a></li>
+        <li><a href="{% url "universe_list" %}">{% trans "Univers" %}</a></li>
+        <li><a href="{% url "character_list" %}">{% trans "Combattants" %}</a></li>
+        <li><a href="{% url "battle_universe_list" %}">{% trans "Historique des Batailles des Univers" %} </a></li>
         {% if user.is_authenticated %}
             <li><a href="">{{  request.user.username }} </a></li>
-            <li><a href="{% url "logout" %}">{% trans "Logout" %} </a></li>
+            <li><a href="{% url "logout" %}">{% trans "Deconnexion" %} </a></li>
 
         {% else %}
 
-            <li><a href="{% url "login" %}">{% trans "Login" %} </a></li>
-            <li><a href="{% url "register" %}">{% trans "Register" %} </a></li>
+            <li><a href="{% url "login" %}">{% trans "Connexion" %} </a></li>
+            <li><a href="{% url "register" %}">{% trans "S'inscrire" %} </a></li>
         {% endif %}
 
     </ul>

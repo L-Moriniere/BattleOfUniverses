@@ -4,9 +4,15 @@
 {% block content %}
 
     <div class="container-fluid p-2">
+        <br>
+        <button class="btn btn-outline-primary"><a
+                href="{% url "character_list" %}">{% trans "Liste des personnages" %}</a></button>
 
+        <br>
+        <br>
         {% if user.is_authenticated %}
-            <button class="btn btn-outline-primary"><a href="{% url "character_edit" character.id%}">Modifier {{ character.name }}</a>
+            <button class="btn btn-outline-warning"><a
+                    href="{% url "character_edit" character.id %}">{% trans "Modifier" %} {{ character.name }}</a>
             </button>
             <br>
         {% endif %}
@@ -14,6 +20,8 @@
         <h1 class="center-text">{{ character.name }}</h1>
         <img src="{{ character.image.url }}" class="img-thumbnail " alt="character" width="300px">
         <br>
+
+        <h2>{% trans "Nombre de victoire" %}: {{ character.nbVictory }}</h2>
 
         <h2> {% trans "Description" %} </h2>
         <p class="center-text">{{ character.description }}</p>
@@ -29,8 +37,16 @@
         {% endfor %}
         <br>
         <br>
-        <button class="btn btn-outline-danger"><a href="{% url "character_list" %}">Liste des personnages</a></button>
-        <br>
 
+        {% if user.is_authenticated %}
+
+            <button class="btn btn-danger"><a href="{% url "character_delete" character.pk %}">
+                {% trans "Supprimer " %}{{ character }}</a>
+            </button>
+
+        {% endif %}
     </div>
+    <br>
+
 {% endblock %}
+
