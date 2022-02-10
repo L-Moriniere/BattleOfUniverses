@@ -49,7 +49,6 @@
         <li><a href="{% url "character_list" %}">{% trans "Combattants" %}</a></li>
         <li><a href="{% url "battle_universe_list" %}">{% trans "Historique des Batailles des Univers" %} </a></li>
         {% if user.is_authenticated %}
-            <li><a href="">{{  request.user.username }} </a></li>
             <li><a href="{% url "logout" %}">{% trans "Deconnexion" %} </a></li>
 
         {% else %}

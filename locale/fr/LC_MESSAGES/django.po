@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: BattleOfUniverses/settings.py:139
 msgid "English"
@@ -28,108 +28,108 @@ msgstr ""
 
 #: templates/base.html:47
 msgid "Accueil"
-msgstr "Home"
+msgstr "Accueil"
 
 #: templates/base.html:48 templates/universe_list_view.html:6
 msgid "Univers"
-msgstr "Universe"
+msgstr "Univers"
 
 #: templates/base.html:49
 msgid "Combattants"
-msgstr "Fighters"
+msgstr "Combattants"
 
 #: templates/base.html:50
 msgid "Historique des Batailles des Univers"
-msgstr "History of Battle of Universes"
+msgstr "Historique des Batailles des Univers"
 
 #: templates/base.html:53
 msgid "Deconnexion"
-msgstr "Logout"
+msgstr "Deconnexion"
 
 #: templates/base.html:57
 msgid "Connexion"
-msgstr "Login"
+msgstr "Connexion"
 
 #: templates/base.html:58
 msgid "S'inscrire"
-msgstr "Register"
+msgstr "S'inscrire"
 
 #: templates/battle_universe_create.html:18
 msgid "Tout séléctionner"
-msgstr "Select all"
+msgstr "Tout séléctionner"
 
 #: templates/battle_universe_create.html:25 templates/character_create.html:15
 #: templates/character_update.html:15 templates/login.html:26
 #: templates/universe_create.html:15 templates/universe_update.html:15
 #: templates/user_create.html:15
 msgid "Envoyer"
-msgstr "Submit"
+msgstr "Envoyer"
 
 #: templates/battle_universe_detail_view.html:7
 msgid "Bataille des Univers :"
-msgstr "Battle of Universes :"
+msgstr "Bataille des Univers :"
 
 #: templates/battle_universe_detail_view.html:9
 msgid "Gagnant de cette bataille !"
-msgstr "Winner of this Battle !"
+msgstr "Gagnant de cette bataille !"
 
 #: templates/battle_universe_list_view.html:5
 msgid "Bataille des Univers"
-msgstr "Battle of Universes"
+msgstr "Bataille des Univers"
 
 #: templates/character_delete.html:7
 msgid "Voulez vous vraiment supprimer "
-msgstr "Do you really want to delete "
+msgstr "Voulez vous vraiment supprimer "
 
 #: templates/character_detail_view.html:9
 msgid "Liste des personnages"
-msgstr "List of characters"
+msgstr "Liste des personnages"
 
 #: templates/character_detail_view.html:15
 #: templates/universe_detail_view.html:9
 msgid "Modifier"
-msgstr "Edit"
+msgstr "Modifier"
 
 #: templates/character_detail_view.html:24
 msgid "Nombre de victoire"
-msgstr "Number of victory"
+msgstr "Nombre de victoire"
 
 #: templates/character_detail_view.html:26
 msgid "Description"
-msgstr "Summary"
+msgstr "Description"
 
 #: templates/character_detail_view.html:44
 msgid "Supprimer "
-msgstr "Delete"
+msgstr "Supprimer "
 
 #: templates/character_list_view.html:6
 msgid "Personnages"
-msgstr "Characters"
+msgstr "Personnages"
 
 #: templates/character_list_view.html:9
 msgid "Ajouter un personnage"
-msgstr "Add a fighter"
+msgstr "Ajouter un personnage"
 
 #: templates/index.html:26
 msgid "Commencer une Bataille des Univers !"
-msgstr "Start a Battle of Universes !"
+msgstr "Commencer une Bataille des Univers !"
 
 #: templates/index.html:28
 msgid "Commencer"
-msgstr "Start"
+msgstr "Commencer"
 
 #: templates/login.html:11
 msgid "Erreur générique !"
-msgstr "Generical Error"
+msgstr "Erreur générique !"
 
 #: templates/universe_detail_view.html:21
 msgid "Liste des personnages de cet univers"
-msgstr "List of characters of this universe"
+msgstr "Liste des personnages de cet univers"
 
 #: templates/universe_detail_view.html:36
 msgid "Retourner aux univers"
-msgstr "Back to universes"
+msgstr "Retourner aux univers"
 
 #: templates/universe_list_view.html:10
 msgid "Ajouter un univers"
-msgstr "Add a universe"
+msgstr "Ajouter un univers"
