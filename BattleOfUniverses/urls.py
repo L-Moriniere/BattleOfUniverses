@@ -24,6 +24,7 @@ from app.views import IndexView, CharacterListView, CharacterCreateView, Univers
     UniverseDetailView, UserCreateView, LogoutView, CharacterUpdateView, UniverseUpdateView, CharacterDeleteView
 
 urlpatterns = [
+
 ]
 
 
